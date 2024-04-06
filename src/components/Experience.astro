@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente..",
+    title: "Desarrollador Web como Freelance",
+    description:
+      "Ofresco servicios de desarrollo web de manera independiente, colaborando con diferentes clientes para crear soluciones personalizadas. Formo parte de un equipo en el que separamos claramente las tareas de Diseño y Desarrollo en nuestros proyectos. Dependiendo de las necesidades específicas de cada proyecto, utilizamos la plataforma de WordPress o bien creamos soluciones personalizadas mediante HTML, CSS, JavaScript , React JS y otras herramientas de desarrollo . Implemento diseños responsivos para garantizar una experiencia óptima en dispositivos móviles y de escritorio. Mantengo relaciones sólidas con mis clientes y genero referencias para futuros proyectos.",
+  },
+  {
+    date: "Feb 2020 - Agosto 2022",
+    title: "Analista de Sistemas en CVG Ferrominera Orinoco.c.a",
+    description:
+      "Encargado de Análisis, diseño y desarrollo de un Módulo del sistema de gestión de inventarios de la empresa.Identificar las necesidades del sistema TIC,  ofreciendo una solución integrada.  Administración de usuarios y roles de administrativos. Operaciones CRUD (Create, Read, Update, Delete).Desarrollo con  Zend Framework (PHP) y Base de datos con PostgreSQL.Control de versiones con Tortoise-cvs",
+  },
+  {
+    date: "Mayo 2018 - Junio 2019",
+    title: "Desarrrollador Wordpress en Radio Avivamiento Producciones.c.a",
+    description:
+      "May 2018 – Jul 2019 | Puerto Ordaz, VE | Hibrido. Creación de sitios web para clientes referidos por la empresa, haciendo contacto directo y recurrente.(Landing Page, web corporativas, Blog, Ecommerces y entre otros). Gestión de contenido y actualizaciones del sitio web de la empresa para mostrar publicidad y emitir una radio online (Maquetación con Elementor). Despliegue en Hosting, con Dominios y Correos corporativos.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-4">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

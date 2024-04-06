@@ -1,0 +1,96 @@
+---
+import Medal from "../icons/Medal.astro";
+import Badge from "./Badge.astro";
+import Code from "../icons/Code.astro";
+import Next from "../icons/Next.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import React from "../icons/React.astro";
+import Js from "../icons/Js.astro";
+import Github from "../icons/Github.astro";
+
+/* import PROJECTSItem from "../components/PROJECTSItem.astro"; */
+
+const TAGS = {
+  NEXT: {
+    name: "Next JS",
+    class: "bg-black text-white",
+    icon: Next,
+  },
+  TAILWIND: {
+    name: "Talwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: Js,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Sistema de Cobranzas",
+    description:
+      "Aplicación que permite registrar pagos de mensualidad para el servicio de internet wifi. Los clientes pueden ver su historial de pagos y detalles de facturación. Se proporciona una interfaz de búsqueda para encontrar pagos por título o cliente.",
+    link: "#",
+    github: "#",
+    image: "/zamora-img.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Clon de Netflix",
+    description:
+      "Este proyecto comparte las mismas características básicas que la plataforma original.Inicio de sesión y registro de usuarios, Exploración de películas.Reproducción de video para ver trailers o clips de películas.Gestión de perfiles.Utiliza la API de The Movie Database (TMDB) para obtener información sobre películas, incluidos detalles como el título, el reparto y las imágenes de fondo.",
+    link: "#",
+    github: "#",
+    image: "/netflix-img.webp",
+    tags: [TAGS.JS, TAGS.REACT],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article class="flex flex-row mb-10 ms-6 ">
+      <div class="flex-1 flex-grow">
+        <h3 class="text-lg font-bold text-yellow-400">{title}</h3>
+        <ul class="flex gap-x-2 flex-row ">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p>{description}</p>
+        <div class="flex">
+          <Badge>
+            <p>Codigo</p>
+            <Code class="size-4" />
+          </Badge>
+          <Badge>
+            <p>Vista</p>
+            <Github class="size-4" />
+          </Badge>
+        </div>
+      </div>
+      <div class="flex-1 flex-grow ">
+        <img
+          class="w-full rounded "
+          src={image}
+          alt={`captura del projecto ${image}`}
+        />
+      </div>
+    </article>
+  ))
+}
