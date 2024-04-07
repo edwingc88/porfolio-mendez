@@ -1,0 +1,76 @@
+---
+import Next from "../icons/Next.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import React from "../icons/React.astro";
+import Js from "../icons/Js.astro";
+
+const SKILLS = [
+  {
+    name: "Next JS",
+    class: "bg-black text-white",
+    icon: Next,
+  },
+  {
+    name: "Talwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: Js,
+  },
+  {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  {
+    name: "React1",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  {
+    name: "React2",
+    class: "bg-black text-white",
+    icon: React,
+  },
+];
+---
+
+<article class="flex flex-row mb-10 ms-6 gap-x-4">
+  <div class="flex-2 grow">
+    <p class="text-pretty pb-2">
+      Hola, mi nombre es Edwin, soy Desarrollador Web con más de dos años de
+      trayectoria. Mi especialidad es el Front-End, aunque también poseo
+      habilidades en Back-End. Estudié la carrera de ingeniería informática, la
+      cual me dotó de competencias en creación de software, gestión de bases de
+      datos, programación, algoritmos, redes de computadoras y otros
+      conocimientos, todos respaldados por mi experiencia laboral. ”
+    </p>
+    <h3 class="text-lg font-bold text-yellow-400">Skills</h3>
+    <div>
+      <ul class="flex flex-row flex-wrap">
+        {
+          SKILLS.map((skill) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${skill.name}`}
+              >
+                <skill.icon class="size-4" />
+                {skill.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="flex-grow-0">
+    <img
+      class="w-full rounded-xl border-8 object-cover aspect-square border-gray-900 ring-2 ring-gray-600 rotate-3"
+      src="mendezfoto.jfif"
+      alt="skills"
+    />
+  </div>
+</article>
