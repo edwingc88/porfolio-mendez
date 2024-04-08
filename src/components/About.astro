@@ -1,19 +1,27 @@
 ---
-import Next from "../icons/Next.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import React from "../icons/React.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
 import Js from "../icons/Js.astro";
+import Node from "../icons/Node.astro";
+import Wordpress from "../icons/Wordpress.astro";
+import Php from "../icons/Php.astro";
+import Mysql from "../icons/Mysql.astro";
+import Mongo from "../icons/Mongo.astro";
+import PostgreSql from "../icons/PostgreSql.astro";
 
 const SKILLS = [
   {
-    name: "Next JS",
+    name: "HTML",
     class: "bg-black text-white",
-    icon: Next,
+    icon: Html,
   },
   {
-    name: "Talwind",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: Css,
   },
   {
     name: "JavaScript",
@@ -26,29 +34,62 @@ const SKILLS = [
     icon: React,
   },
   {
-    name: "React1",
-    class: "bg-black text-white",
-    icon: React,
+    name: "Talwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
   },
   {
-    name: "React2",
+    name: "Node",
     class: "bg-black text-white",
-    icon: React,
+    icon: Node,
+  },
+  {
+    name: "Mongo",
+    class: "bg-black text-white",
+    icon: Mongo,
+  },
+  {
+    name: "PHP",
+    class: "bg-gray text-white",
+    icon: Php,
+  },
+  {
+    name: "PostgreSQL",
+    class: "bg-gray text-white",
+    icon: PostgreSql,
+  },
+  {
+    name: "MySQL",
+    class: "bg-gray text-white",
+    icon: Mysql,
+  },
+  {
+    name: "Wordpress",
+    class: "bg-gray text-white",
+    icon: Wordpress,
+  },
+  {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
   },
 ];
 ---
 
-<article class="flex flex-row mb-10 ms-6 gap-x-4">
-  <div class="flex-2 grow">
-    <p class="text-pretty pb-2">
-      Hola, mi nombre es Edwin, soy Desarrollador Web con más de dos años de
-      trayectoria. Mi especialidad es el Front-End, aunque también poseo
-      habilidades en Back-End. Estudié la carrera de ingeniería informática, la
-      cual me dotó de competencias en creación de software, gestión de bases de
-      datos, programación, algoritmos, redes de computadoras y otros
-      conocimientos, todos respaldados por mi experiencia laboral. ”
+<article class="flex flex-row mb-10 ms-2 gap-x-2">
+  <div class="grow pr-6">
+    <p class="text-balance pb-2">
+      Hola, mi nombre es Edwin , soy Desarrollador Web con más de dos años de
+      trayectoria , actualmente recidiendo en Puerto Ordaz. Venezuela .Mi
+      especialidad es el Frontend, aunque también poseo habilidades en Backend.
     </p>
-    <h3 class="text-lg font-bold text-yellow-400">Skills</h3>
+    <p class="text-balance pb-1">
+      Estudié la carrera de ingeniería informática, la cual me dotó de
+      competencias en creación de software, gestión de bases de datos,
+      programación, algoritmos, redes de computadoras y otros conocimientos,
+      todos respaldados por mi experiencia laboral.
+    </p>
+    <h3 class="text-lg font-bold text-yellow-400 pb-1">Skills</h3>
     <div>
       <ul class="flex flex-row flex-wrap">
         {
@@ -66,7 +107,7 @@ const SKILLS = [
       </ul>
     </div>
   </div>
-  <div class="flex-grow-0">
+  <div class="flex-none w-1/4">
     <img
       class="w-full rounded-xl border-8 object-cover aspect-square border-gray-900 ring-2 ring-gray-600 rotate-3"
       src="mendezfoto.jfif"

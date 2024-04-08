@@ -28,60 +28,59 @@ import User from "../icons/User.astro";
         </h1>
         <h2 class="mx-auto text-center text-xs md:text-xl pt-4 text-wrap">
           <span>+2 años de experiencia.</span><span class="text-orange-400">
-            Desarrollador de aplicaciones web ,<span class="text-red-400">
-              de Puerto Ordaz, Venezuela.</span
-            ></span
-          ><span class="opacity-80">
-            Especializado en desarrollo Frontend utilizando tecnologías y
-            herramientas web modernas.
-          </span>
-          <!--       <Badge>Correo</Badge>
-          <Badge>CV</Badge> -->
-        </h2>
-        <div class="pt-6 w-full">
-          <nav
-            class="flex flex-row flex-wrap justify-center lg:flex-nowrap gap-1 lg:gap-3"
+            Desarrollador de aplicaciones web con Frameworks JavaScript.</span
+          ><span class="opacity-80"></span>
+          Especializado en <span class="text-red-400">
+            Desarrollo Frontend</span
           >
-            <SocialPill
-              href="https://www.linkedin.com/in/edwin-mendez-325165164/"
-            >
-              <p class="pr-2 lg:text-base text-xs">LinkedIn</p>
-              <Linkedin class="size-4 lg:size-6 pt-0.5 pb-0.5" />
-            </SocialPill>
-            <SocialPill href="https://github.com/edwingc88/">
-              <p class="pr-2">Github</p>
-              <Github class="size-4 lg:size-6 pt-0.5 pb-0.5" />
-            </SocialPill>
-            <SocialPill href="mailto:edwingc88@gmail.com">
-              <p class="pr-2">Contáctame</p><Email class="size-4 lg:size-6" />
-            </SocialPill>
-            <SocialPill href="cv-mendez.pdf">
-              <p class="pr-2">Descargar</p><Cv class="size-4 lg:size-6" />
-            </SocialPill>
-          </nav>
-        </div>
+          utilizando tecnologías y herramientas web modernas.
+        </h2>
+        <!--       <Badge>Correo</Badge>
+          <Badge>CV</Badge> -->
+      </div>
+      <div class="pt-6 w-full">
+        <nav
+          class="flex flex-row flex-wrap justify-center lg:flex-nowrap gap-1 lg:gap-3"
+        >
+          <SocialPill
+            href="https://www.linkedin.com/in/edwin-mendez-325165164/"
+          >
+            <p class="pr-2 lg:text-base text-xs">LinkedIn</p>
+            <Linkedin class="size-4 lg:size-6 pt-0.5 pb-0.5" />
+          </SocialPill>
+          <SocialPill href="https://github.com/edwingc88/">
+            <p class="pr-2">Github</p>
+            <Github class="size-4 lg:size-6 pt-0.5 pb-0.5" />
+          </SocialPill>
+          <SocialPill href="mailto:edwingc88@gmail.com">
+            <p class="pr-2">Contáctame</p><Email class="size-4 lg:size-6" />
+          </SocialPill>
+          <SocialPill href="cv-mendez.pdf">
+            <p class="pr-2">Descargar</p><Cv class="size-4 lg:size-6" />
+          </SocialPill>
+        </nav>
       </div>
     </SectionContainer>
-
-    <SectionContainer id="experience" class="py-14">
-      <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
-        <Medal class="size-8" />Experiencia Laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="projects" class="py-8">
-      <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
-        <Briefcase class="size-8" />Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-
-    <SectionContainer id="about" class="py-8">
-      <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
-        <User class="size-8" />Sobre Mi
-      </h2>
-      <About />
-    </SectionContainer>
   </main>
+
+  <SectionContainer id="experience" class="py-14">
+    <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
+      <Medal class="size-8" />Experiencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer id="projects" class="py-8">
+    <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
+      <Briefcase class="size-8" />Proyectos
+    </h2>
+    <Projects />
+  </SectionContainer>
+
+  <SectionContainer id="about" class="py-8">
+    <h2 class="flex gap-x-2 text-2xl items-center font-bold mb-6">
+      <User class="size-8" />Sobre Mi
+    </h2>
+    <About />
+  </SectionContainer>
 </Layout>

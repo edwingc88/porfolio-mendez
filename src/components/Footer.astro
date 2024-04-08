@@ -1,14 +1,87 @@
-<footer class="flex flex-row justify-between py-6 mx-auto md:w-[744px]">
-  <span>@2024. Edwin Mendez . Correo: edwingc88@gmail.com</span>
-  <ul class="flex flex-row">
-    <li>
-      <a href="">Experiencia</a>
-    </li>
-    <li>
-      <a href="">Proyectos</a>
-    </li>
-    <li>
-      <a href="">Sobre mi</a>
-    </li>
-  </ul>
+---
+
+---
+
+<footer
+  class="flex flex-row justify-between py-6 mx-auto md:w-[744px] align-middle"
+>
+  <span>@2024.Created with Astro by Edwin Mendez.</span>
+
+  <div class="flex flex-row gap-2">
+    <label for="npm-install" class="sr-only">Label</label>
+    <input
+      id="npm-install"
+      type="text"
+      class="col-span-6 bg-gray-700 border border-gray-500 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      value="edwingc88@gmail.com"
+      disabled
+      readonly
+    />
+    <button
+      data-copy-to-clipboard-target="npm-install"
+      class="p-2 col-span-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 items-center inline-flex justify-center"
+    >
+      <span id="default-message">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+          ></path><path
+            d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+          ></path></svg
+        >
+      </span>
+      <span id="success-message" class="hidden inline-flex items-center">
+        <svg
+          class="w-3 h-3 text-white me-1.5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 16 12"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5.917 5.724 10.5 15 1.5"></path>
+        </svg>
+        Copied!
+      </span>
+    </button>
+  </div>
 </footer>
+
+<script>
+  import { initFlowbite } from "flowbite";
+
+  // initialize components based on data attribute selectors
+  initFlowbite();
+
+  const clipboard = FlowbiteInstances.getInstance(
+    "CopyClipboard",
+    "npm-install"
+  );
+  const $defaultMessage = document.getElementById("default-message");
+  const $successMessage = document.getElementById("success-message");
+
+  clipboard.updateOnCopyCallback((clipboard) => {
+    $defaultMessage.classList.add("hidden");
+    $successMessage.classList.remove("hidden");
+
+    // reset to default state
+    setTimeout(() => {
+      $defaultMessage.classList.remove("hidden");
+      $successMessage.classList.add("hidden");
+    }, 2000);
+  });
+</script>
