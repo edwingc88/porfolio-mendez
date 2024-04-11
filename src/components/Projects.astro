@@ -7,6 +7,9 @@ import Tailwind from "../icons/Tailwind.astro";
 import React from "../icons/React.astro";
 import Js from "../icons/Js.astro";
 import Github from "../icons/Github.astro";
+import Php from "../icons/Php.astro";
+import Elementor from "../icons/Elementor.astro";
+import Woo from "../icons/Woo.astro";
 
 /* import PROJECTSItem from "../components/PROJECTSItem.astro"; */
 
@@ -35,6 +38,7 @@ const TAGS = {
 
 const PROJECTS = [
   {
+    id: "1",
     title: "Sistema de Cobranzas",
     description:
       "Aplicación que permite registrar pagos de mensualidad para el servicio de internet wifi. Los clientes pueden ver su historial de pagos y detalles de facturación. Se proporciona una interfaz de búsqueda para encontrar pagos por título o cliente.",
@@ -42,83 +46,205 @@ const PROJECTS = [
     github: "#",
     image: "/zamora-img.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
+    classArticle: "flex-row",
   },
   {
+    id: "2",
     title: "Clon de Netflix",
     description:
-      "Este proyecto comparte las mismas características básicas que la plataforma original.Inicio de sesión y registro de usuarios, Exploración de películas.Reproducción de video para ver trailers o clips de películas.Gestión de perfiles.Utiliza la API de The Movie Database (TMDB) para obtener información sobre películas, incluidos detalles como el título, el reparto y las imágenes de fondo.",
+      "Proyecto que comparte las mismas características básicas que la plataforma original.Inicio de sesión y registro de usuarios, Exploración de películas.Reproducción de video para ver trailers o clips de películas y se Utiliza la API de The Movie Database (TMDB) para obtener información sobre películas.",
     link: "#",
     github: "#",
     image: "/netflix-img.webp",
     tags: [TAGS.JS, TAGS.REACT],
+    classArticle: "flex-row-reverse",
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article class="flex flex-row mb-10 ms-6 ">
-      <div class="flex-1 flex-grow">
-        <h3 class="text-lg font-bold text-yellow-400">{title}</h3>
-        <ul class="flex gap-x-2 flex-row ">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p>{description}</p>
-        <div class="flex">
-          <Badge>
-            <p>Codigo</p>
-            <Code class="size-4" />
-          </Badge>
-          <Badge>
-            <p>Vista</p>
-            <Github class="size-4" />
-          </Badge>
+  PROJECTS.map(
+    ({ title, description, link, github, id, image, tags, classArticle }) => (
+      <article class={`flex ${classArticle} mb-10 `}>
+        <div class="flex-1 flex-grow mr-4 ">
+          <h3 class="text-lg font-bold text-yellow-400 pb-0.5">{title}</h3>
+          <ul class="flex gap-x-2 flex-row  pb-1 ">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="mb-1">{description}</p>
+          <div class="flex">
+            <Badge id={`btn-${id}`}>
+              <p>Vista</p>
+              <Code class="size-4" />
+            </Badge>
+            <Badge>
+              <p>Codigo</p>
+              <Github class="size-4" />
+            </Badge>
+          </div>
         </div>
-      </div>
-      <div class="flex-1 flex-grow ">
-        <img
-          class="w-full rounded "
-          src={image}
-          alt={`captura del projecto ${image}`}
-        />
-      </div>
-    </article>
-  ))
+        <div class="flex-1 flex-grow mr-4 ">
+          <img
+            id={`img-${id}`}
+            class={`w-full rounded object-contain`}
+            src={image}
+            alt={`captura del projecto ${image}`}
+          />
+        </div>
+      </article>
+    )
+  )
 }
 
-<article class="flex flex-row mb-10 ms-6">
-  <div class="flex-1 flex-grow">
-    <img src="netflix-img.webp" />
-  </div>
-  <div class="flex-1 flex-grow">
+<article class="flex flex-row mb-10">
+  <div class="flex-1 flex-grow mr-2">
     <h3 class="text-lg font-bold text-yellow-400">Proyectos Wordpress</h3>
-    <ul class="flex gap-x-2 flex-row">
-      <li>W</li>
+    <ul class="flex gap-x-2 flex-row pb-1">
+      <li>
+        <span class={`flex gap-x-1 rounded-full text-xs py-1 px-1`}>
+          <Php class="size-4" /> PHP
+        </span>
+      </li>
+      <li>
+        <span class={`flex gap-x-1 rounded-full text-xs py-1 px-1`}>
+          <Elementor class="size-4" /> Elementor
+        </span>
+      </li>
+      <li>
+        <span class={`flex gap-x-1 rounded-full text-xs py-1 px-1`}>
+          <img src="yoast.png" class="w-4 h-4" />Yoast
+        </span>
+      </li>
+      <li>
+        <span class={`flex gap-x-1 rounded-full text-xs py-1 px-1`}>
+          <img src="woo.png" class="w-4 h-4" />WooCommerce
+        </span>
+      </li>
     </ul>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sint
-      necessitatibus nemo, similique sed odit explicabo eligendi neque soluta
-      voluptate, commodi possimus odio pariatur blanditiis alias sequi excepturi
-      impedit exercitationem.
+      Creacion de variedad de sitios web, incluyendo páginas de aterrizaje,
+      sitios web corporativos, blogs y tiendas en línea. Gestión de contenido,
+      personalización de temas y plugins para funciones específicas.
     </p>
-    <div class="flex">
-      <Badge>
-        <p>Codigo</p>
-        <Code class="size-4" />
-      </Badge>
-      <Badge>
-        <p>Vista</p>
-        <Github class="size-4" />
-      </Badge>
+  </div>
+  <div class="flex-1 flex-grow flex-col justify-start">
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative h-72 overflow-hidden rounded-lg">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in" data-carousel-item>
+          <img
+            src="/churchsonpro.webp"
+            class="object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full"
+            alt="..."
+          />
+          <a
+            href=""
+            class="absolute m-auto text-center top-1/2 left-1/2 translate-x-1/2 translate-y-1/2"
+            >BTN</a
+          >
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in" data-carousel-item>
+          <img
+            src="/openseasonservices.webp"
+            class="object-cover absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in" data-carousel-item>
+          <img
+            src="/faithmedia.webp"
+            class="object-cover absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="..."
+          />
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 3"
+          data-carousel-slide-to="2"></button>
+      </div>
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+
+      <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   </div>
 </article>
